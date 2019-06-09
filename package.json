@@ -20,6 +20,7 @@
     "react-dom": "^16.4.2",
     "react-transition-group": "2",
     "spectacle": "5.2.2",
+    "cross-env": "^5.2.0",
     "spectacle-renderer": "^0.0.3"
   },
   "devDependencies": {
@@ -40,7 +41,6 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babel-runtime": "^6.26.0",
-    "cross-env": "^5.2.0",
     "css-loader": "^1.0.0",
     "eslint": "^5.3.0",
     "eslint-config-formidable": "^4.0.0",
