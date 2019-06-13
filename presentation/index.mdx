@@ -39,7 +39,36 @@ João Vítor
 
 ## Babel
 
-#### 3/3
+- Compilador/transpilador JavaScript 
+- Open source 🆓 
+- Configurável
+
+[Try it out](https://babeljs.io/repl/#?babili=false&browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=M4Yw9gDgpgdMUBsogC4CECeBxArgSwBMoCBZAQxRAAsACAXhoAoiAzPAOzxTzHfpoDaAXQA0NGBMJR23blGABKegD4aAbwBQNbTtYcuPPg2Exw7EBWZQ2nbrwUBuLTu1SZB-fxNmLKRhJg3WTx5Rw1nFzNgFBoAJzAAd2B-UEhYKjJ2AiRYrFjCGABzKBQANTxgPAAjJAAlROBGMIidPBYmAH1A4ABRAFsIFAwrGwN7GgAfCZouiv7B4aCPRUnp2d6BocZ4pIUlTRcXWJKcWPYnQ5oAX3DLqJiOIgAPTwYd4BhjghwQKEZGMgIBBiHZiR5QJ5KOiqA6XOKJfg7GDSWQYGgAfnhCWR7iGNAAXFiLnC2kxgFQwDgEAQAMqIZAoeoJbaJPbqFqXQEIGAQHDkxjgyHEy43OFxE5nGhc4U6K5iYTNO68aI0cmU6k0kDxIH8QXyGBIdiFFC0OhmmgARhlriyEP1LDAsR6ZGoAttTxU7LFqWgMAyWRycHpqFqyEdBEwAEl3W7nmI1VTaVqwECwiLFbKHEA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=es2015%2Creact%2Cstage-2&prettier=false&targets=&version=7.4.5&externalPlugins=)
+
+---
+
+## Funcionalidades ES6+
+
+---
+
+Template strings
+
+---
+
+### strings interpolation
+
+```javascript
+var a = 5;
+var b = 10;
+console.log("Quinze é " + (a + b) + " e não " + (2 * a + b) + ".");
+// "Quinze é 15 e não 20."
+```
+```javascript
+var a = 5;
+var b = 10;
+console.log(`Quinze é ${a + b} e não ${2 * a + b}.`);
+// "Quinze é 15 e não 20."
+```
 
 ---
 
@@ -87,8 +116,7 @@ var person = {
   }
 };
 
-person.sayHello();  
-// Hi, I'm Joao and I'm 22 years old
+person.sayHello(); // Hi, I'm Joao and I'm 22 years old 👍
 ```
 
 ---
@@ -104,9 +132,28 @@ var person = {
 };
 
 person.sayHello(); 
-//Hi, I'm undefined and I'm undefined years old
+//Hi, I'm undefined and I'm undefined years old 👎
+```
+---
+
+### destructuring
+
+```javascript
+const [a, b, ...rest] = [1, 2, 3, 4, 5] // Com valores
+
+console.log(a) // 1
+console.log(b) // 2
+console.log(rest) // 3, 4, 5
 ```
 
+```javascript
+const person = { name: 'Joao', age: 22 } // Com objetos
+
+const {name, age} = person
+
+console.log(name) // 'Joao'
+console.log(age) // 22
+```
 
 ---
 
@@ -180,19 +227,68 @@ var multiply = function(x, y) {
 multiply(3, 2); // 6
 multiply(3); // 3
 ```
+```javascript
+const multiply = (x, y = 1) => x * y
+
+multiply(3, 2) // 6
+multiply(3) // 3
+```
 ---
 
----
-![ecmascript](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAGQCAYAAACAvzbMAAABG2lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS41LjAiPgogPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIi8+CiA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgo8P3hwYWNrZXQgZW5kPSJyIj8+Gkqr6gAAAYVpQ0NQc1JHQiBJRUM2MTk2Ni0yLjEAACiRdZG5S0NBEIe/JEo8IhamsBBMESzEiEYJ2nkgHoiEqJCoTfJyCTke70VELC1sU1h4YGMQG2vtxH9AEAS1EsFWLBRsJDxnEyEiZpbd/fa3M7O7s2APZ7Ss2TAA2VzBCE1PeMKRFY/zmWY6cdHNYFQz9fFgcJ669nmPTc13PpWrvt+/1hpPmBrYmoTHNN0oCM8IL2wWdMX7wm4tHY0Lnwv3GXJB4Uelx6r8qjhVYbvK6TaWQpPCbmFP6hfHfrGWNrLCw8LebGZD+7mPeokrkVteVLr0LkxCTDOBh1mmmCTAIKMyBvDhp19W1In3V+IXyEusJqPOFgbrpEhToE/UDcmekDkpekJaRjzE1B/8ra2ZHPJXT3DNQeOLZX30gvMIyruW9XViWeUSOKQu13u1+PwejLyJXqxp3mNo34GLq5oWO4XLInQ+6VEjWpEc0u3JJLyfQVsEOm6hZbVat599Sg+wtA3zN3BwCD3i3772DUYfZ1cQR47LAAAACXBIWXMAAAsTAAALEwEAmpwYAAAefUlEQVR4nO3dd3xV9cHH8e/Nvdl7smfYU2ZFRDFOUEGlblGRVnG1ttJWq1hbW7V1PT6t1bqt1gHYOsBKURSxRUAQkJVAwjCsBLJ37s19/qDwIAZIfiT5nXvv5/0PvCiFrysfzjn3nOOq2TJuhqSnBQBAM4TZHgAACEwEBABghIAAAIwQEACAEQICADBCQAAARggIAMAIAQEAGCEgAAAjBAQAYISAAACMEBAAgBECAgAwQkAAAEYICADACAEBABghIAAAIwQEAGCEgAAAjBAQAIARAgIAMEJAAABGCAgAwAgBAQAYISAAACMEBABghIAAAIwQEACAEQICADBCQAAARggIAMAIAQEAGCEgAAAjBAQAYISAAACMEBAAgBECAgAwQkAAAEYICADACAEBABghIAAAIwQEAGCEgAAAjBAQAIARAgIAMEJAAABGCAgAwAgBAQAYISAAACMEBABghIAAAIwQEACAEQICADBCQAAARggIAMAIAQEAGCEgAAAjBAQAYISAAACMEBAAgBECAgAwQkAAAEYICADACAEBABghIAAAIwQEAGCEgAAAjBAQAIARAgIAMEJAAABGCAgAwAgBAQAYISAAACMEBABghIAAAIwQEACAEQICADBCQAAARggIAMAIAQEAGCEgAAAjBAQAYISAAACMEBAAgBECAgAwQkAAAEYICADACAEBABghIAAAIwQEAGCEgAAAjBAQAIARAgIAMEJAAABGCAgAwAgBAQAYISAAACMEBABghIAAAIwQEACAEQICADBCQAAARggIAMAIAQEAGCEgAAAjBAQAYISAAACMEBAAgBECAgAwQkAAAEYICADACAEBABghIAAAIwQEAGCEgAAAjBAQAIARAgIAMEJAAABGCAgAwAgBAQAYISAAACMEBABghIAAAIwQEACAEQICADBCQAAARggIAMAIAQEAGCEgAAAjBAQAYISAAACMEBAAgBECAgAwQkAAAEYICADACAEBABghIAAAIwQEAGCEgAAAjBAQAIARAgIAMEJAAABGCAgAwAgBAQAYISAAACMEBABghIAAAIwQEACAEQICADBCQAAARggIAMAIAQEAGCEgAAAjBAQAYISAAACMEBAAgBECAgAwQkAAAEYICADACAEBABghIAAAIwQEAGCEgAAAjBAQAIARAgIAMEJAAABGCAgAwAgBAQAYISAAACMEBABghIAAAIwQEACAEQICADBCQAAARggIAMAIAQEAGCEgAAAjHtsDAOBENTRI5ZVelZR6VVLuU2mZVyVlXtXVNyghzqOkBI8S4t1KivcoMcGjqMgwuVy2Vwc+AgLAkbw+v7Zsq9b6nCrl5FWpuMSrknKvSsu8Ki498O3BWJSWe+X3N/3XDve4lJjgUWK8R0kJbiXE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)
+#### rest parameters
 
 ---
+```javascript
+var sum = function() { // Sintaxe ES5
+    var result = 0;
+    for (var i=0; i < arguments.length; i++) {
+        result += arguments[i];
+    }
+    return result;
+}
 
-pergunta? 
-Como `react hooks` está mudando outras práticas?
+sum(1, 2, 3, 4, 5); // 15
+```
 
 ---
 
-resposta.
+```javascript
+function sum(...numbers) { // Sintaxe ES6 
+  let result = 0
+  numbers.forEach((number) => {
+    result += number
+  })
+  return result
+}
+
+sum(1, 2, 3, 4, 5) // 15
+```
+```javascript
+const sum = (...numbers) => // Ou ainda na forma funcional
+    numbers.reduce((acc, current) => acc + current, 0)
+
+sum(1, 2, 3, 4, 5) // 15
+```
+
+---
+
+Orientação a objetos
+
+---
+
+Classes
+constructor
+getters/setters
+herança
+
+
+---
+
+Módulos
+
+---
+
+#### export/import
 
 ---
 
@@ -202,6 +298,7 @@ resposta.
 
 #### Fim
 
+
 ---
 
 ## https://bit.ly/2KeSd0N
@@ -210,9 +307,13 @@ resposta.
 
 ---
 
-## Referencias
+## Referências
 
-- [Medium - O Guia do ES6: TUDO que você precisa saber](https://medium.com/@matheusml/o-guia-do-es6-tudo-que-voc%C3%AA-precisa-saber-8c287876325f)
-- [Medium - JavaScript ES6 — Faça mais escrevendo menos](https://medium.com/devtranslate/javascript-es6-fa%C3%A7a-mais-escrevendo-menos-a2513ffb9dcd)
+- [GitHub TC39 - Propostas](https://github.com/tc39/proposals)
+- [O Guia do ES6: TUDO que você precisa saber](https://medium.com/@matheusml/o-guia-do-es6-tudo-que-voc%C3%AA-precisa-saber-8c287876325f)
+- [JavaScript ES6 — Faça mais escrevendo menos](https://medium.com/devtranslate/javascript-es6-fa%C3%A7a-mais-escrevendo-menos-a2513ffb9dcd)
 - [TC39 their process and some features](https://drive.google.com/file/d/1MdZxCXgrRRM42DiDI7DGkow7zgxE2ykc/view?usp=sharing)
-
+- [ES6: arrow functions em 5 minutos](https://raphaelfabeni.com/es6-arrow-functions/)
+- [ES10 e o futuro do JavaScript](https://imasters.com.br/desenvolvimento/es10-e-o-futuro-javascript)
+- [Trying out JavaScript ES6 using Babel](https://medium.com/the-web-tub/trying-out-javascript-es6-using-babel-7dbd4de95835)
+- [Template strings](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/template_strings)
